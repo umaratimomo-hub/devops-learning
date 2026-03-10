@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#An improved calculator including other calculation possibilities using the case function
 # Get numbers from arguments or ask user
 if [ $# -lt 2 ]; then
     echo "Enter first number:"
@@ -11,6 +11,7 @@ else
     num2=$2
 fi
 
+#Provide type of calculation needed
 echo "Choose an operation:"
 echo "1) Add"
 echo "2) Subtract"
@@ -18,8 +19,10 @@ echo "3) Multiply"
 echo "4) Divide"
 echo "5) Exit"
 
-read choice
+read choice  #Store selection in choice variable
 
+
+#use case function to provide the different calculation options. (A cleaner method to using many if statements)
 case $choice in
     1)
         result=$((num1 + num2))
